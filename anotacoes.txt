@@ -62,3 +62,17 @@ $ -> define o que você quer procurar no final
 ([a-z.]{4,14}[a-z\d])@(?:caelum.com.br|alura.com.br) -> filtrando apenas o username ex: super.maria@caelum.com.br
 
 ^([\w-]\.?)+@([\w-]+\.)+([A-Za-z]{2,4})+$ -> validando email ex: donkey.kong@kart.com.br
+
+- Módulo 5
+
+.+ -> seleciona tudo
+.?+ -> a interrogação faz parar no primeiro elemento que ele encontrar, por exemplo: ".+?>" vai parar no primeiro ">"
+\s\w -> percorre vários elementos mesmo com espaço
+| -> significa "ou"
+\1 -> vai fazer referência ao primeiro grupo
+^ -> negação
+
+<h1.+?>([\s\wõ]+)</h1> -> selecionando o conteúdo da h1 em: <h1 class="text-left">Expressões regulares</h1>
+<(h1|h2).+?> -> buscando h1 ou h2
+<(h1|h2).+?>([\s\wõ]+)</\1> -> ajuste para quando for h1 ou h2
+<h1[^>]+> -> vai selecionar tudo que não é >
