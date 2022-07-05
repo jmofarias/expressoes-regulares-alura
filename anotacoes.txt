@@ -1,0 +1,14 @@
+expressoes regulares:
+
+. -> significa qualquer caractere
+
+.*png -> busca uma string que tenha "png" no fim
+\d -> buscando por números
+\d\d\d -> buscando por 3 números em sequência
+\d\d\d\. -> buscando por 3 números em sequência e um ponto
+\d\d\d\.\d\d\d\.\d\d\d-\d\d -> buscando pelo padrão do CPF
+\d{3}\.\d{3}\.\d{3}-\d{2} -> usando quantifier para buscar CPF
+\d{1,3} -> procurando números que tem de um a 3 algarismos
+\(\d{2}\) -> procurando 2 números que estão entre parenteses
+
+quantifier -> define a quantidade de vezes que o caractere deve aparecer

@@ -1,13 +1,18 @@
 function executa(event) {
 
+	// prevenindo o comportamento padrão
 	event.preventDefault();
 
 	limparResultados();
+	// pegando os dados do formulário
 	var valores 	 = pegaValoresDoForm();
 
+	// executando a expressão regular
     var resultados 	 = executaRegex(valores);
     
+	// mostrando resultado no input (Matches(resultados))
     imprimeResultadoNoInput(resultados);
+	// mostra o highlight
     highlightResultados(resultados, valores.target);
 }
 
@@ -22,9 +27,11 @@ function executaRegex(valores) {
 	var resultados	 = [];
     var resultado 	 = null;
 
-
+	// objeto que vai pegar a string e transformar em um objeto, o 'g' significa global (padrão)
+	// RegExp do JavaScript foi chamado aqui
 	var objetoRegex  = new RegExp(textoPattern, 'g');
 
+	// excutando o método passando o alvo para receber os resultados
 	while (resultado = objetoRegex.exec(textoTarget)) {
 
 		if(resultado[0] === "") {
