@@ -1,0 +1,64 @@
+<html>
+
+<script>
+
+    var alvo = '11a22b33c';
+    // chamando a expressão regular pelo objeto RegExp, o 'g' é específico do JS significa global
+    // tenho que usar 2 barras para reconhecer
+    // uma forma de definir o regex
+    // var exp  = new RegExp('(\\d\\d)(\\w)', 'g');
+
+    // outra forma de definir o regex
+    // forma para usar quando o regex for fixo
+    var exp = /(\d\d)(\w)/g;
+    var resultado = null;
+
+    // executando exp passando o alvo
+    while(resultado = exp.exec(alvo)){
+        console.log(resultado);
+        // mostrando a última posição do match
+        console.log(exp.lastIndex);
+    };
+
+    // testando se a regex existe dentro do nosso alvo
+    console.log(exp.test(alvo));
+
+    // Exercício 1
+
+    var anoMesDia = '2022-07-05';
+
+    // passando a expressão de identificar o "-"
+    var exp2 = /-/g;
+
+    // replace: método para que pega a expressão regular e um segundo elemento para substituir de acordo com o lugar que a expressão regular está
+    anoMesDia = anoMesDia.replace(exp2, '/');
+
+    console.log(anoMesDia);
+
+    // Exercício 2
+
+    var arquivo = '100,200-150,200;20';
+
+    // split: método que passamos um separador que ele vai criar um array separando os item com esse separador
+    // var valores = arquivo.split(',');
+    
+    var exp3 = /[,;-]/;
+
+    valores = arquivo.split(exp3);
+    
+    console.log(valores);
+
+    // Exercício 3
+
+    var codigos = 'A121B12112C12212F12G01';
+
+    var exp4 = /[A-Za-z]\d+/g;
+
+    // match: método que retorna um array com as partes que atendem a expressão regular
+    var codigosExtraidos = codigos.match(exp4);
+
+    console.log(codigosExtraidos);
+
+</script>
+
+</html>
