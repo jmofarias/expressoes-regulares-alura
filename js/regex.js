@@ -19,6 +19,7 @@ function executa(event) {
 
 function executaRegex(valores) {
 
+	// textoPattern: pega a string do alvo
 	var textoPattern = valores.pattern; //montaPatternDeDataMaisLegivel();
 	var textoTarget  = valores.target;
 	var mostraIndex  = valores.mostraIndex;
